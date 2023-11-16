@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react';
+import { Heading } from '@chakra-ui/react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Heading
+        fontSize={{ base: '4xl', sm: '5xl', md: '6xl' }}
+        fontWeight="bold"
+        textAlign="center"
+        bgGradient="linear(to-r, #7928CA, #FF0080)"
+        bgClip="text"
+        mt={4}
+      >
+        Just one more usefull Kanban Board
+      </Heading >
     </>
-  )
+  );
 }
 
-export default App
+export default App;
