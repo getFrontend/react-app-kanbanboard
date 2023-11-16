@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { Heading } from '@chakra-ui/react';
+import { Heading, Container } from '@chakra-ui/react';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -16,6 +16,13 @@ function App() {
       >
         Just one more usefull Kanban Board
       </Heading >
+      <Container
+        maxWidth="container.lg"
+        px={4}
+        py={10}
+      >
+
+      </Container>
     </>
   );
 }
