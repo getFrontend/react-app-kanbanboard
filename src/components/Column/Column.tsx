@@ -9,6 +9,8 @@ import {
 } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 import Task from '../Task/Task';
+import useColumnTasks from '../../hooks/useColumnTasks';
+import useColumnDrop from '../../hooks/useColumnDrop';
 
 const ColumnColorSheme: Record<ColumnType, string> = {
   'Hot tasks': 'orange',
@@ -18,16 +20,27 @@ const ColumnColorSheme: Record<ColumnType, string> = {
 };
 
 function Column({ column }: { column: ColumnType }) {
-  const ColumnTasks = task.map((task, index) => {
+  const {
+    tasks,
+    addEmptyTask,
+    deleteTask,
+    dropTaskFrom,
+    swapTasks,
+    updateTask,
+  } = useColumnTasks(column);
+
+  const { dropRef, isOver } = useColumnDrop(column, dropTaskFrom);
+
+  const ColumnTasks = tasks.map((task, index) => (
     <Task
       key={task.id}
       task={task}
       index={index}
-      // onDropHover={ }
-      // onUpdate={ }
-      // onDelete={ }
-    />;
-  });
+      onDropHover={swapTasks}
+      onUpdate={updateTask}
+      onDelete={deleteTask}
+    />
+  ));
 
   return (
     <Box>
@@ -49,12 +62,13 @@ function Column({ column }: { column: ColumnType }) {
         _hover={{ bgColor: useColorModeValue('gray.200', 'gray.600') }}
         py={2}
         variant="solid"
-        // onClick={addEmptyTask}s
+        onClick={addEmptyTask}
         colorScheme="black"
         aria-label="add-task"
         icon={<AddIcon />}
       />
       <Stack
+        ref={dropRef}
         direction={{ base: 'row', md: 'column' }}
         h={{ base: 300, md: 600 }}
         p={4}
@@ -64,6 +78,7 @@ function Column({ column }: { column: ColumnType }) {
         rounded="lg"
         boxShadow="md"
         overflow="auto"
+        opacity={isOver ? 0.85 : 1}
       >
         {ColumnTasks}
       </Stack>
