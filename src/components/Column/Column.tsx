@@ -1,4 +1,4 @@
-import { ColumnType } from '../../config/utils/enums';
+import { ColumnType } from '../../utils/enums';
 import {
   Badge,
   Box,
@@ -23,9 +23,9 @@ function Column({ column }: { column: ColumnType }) {
       key={task.id}
       task={task}
       index={index}
-      onDropHover={}
-      onUpdate={}
-      onDelete={}
+      // onDropHover={ }
+      // onUpdate={ }
+      // onDelete={ }
     />;
   });
 

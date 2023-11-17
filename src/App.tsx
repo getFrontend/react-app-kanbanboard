@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { Heading, Container } from '@chakra-ui/react';
+import { Heading, Container, SimpleGrid } from '@chakra-ui/react';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -21,7 +21,12 @@ function App() {
         px={4}
         py={10}
       >
+        <SimpleGrid
+          columns={{ base: 1, md: 4 }}
+          spacing={{ base: 16, m: 4 }}
+        >
 
+        </SimpleGrid>
       </Container>
     </>
   );

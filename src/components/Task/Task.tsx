@@ -1,3 +1,4 @@
+import { DeleteIcon } from '@chakra-ui/icons';
 import { TaskProps } from './Task.props';
 import { Box, IconButton } from '@chakra-ui/react';
 
@@ -33,9 +34,21 @@ function Task({
         aria-label="delete-task"
         size="md"
         icon={<DeleteIcon />}
-      >
-
-      </IconButton>
+        opacity={0}
+        _groupHover={{ opacity: 1 }}
+      />
+      <TextArea
+        value={task.title}
+        fontWeight="semibold"
+        cursor="inherit"
+        border="none"
+        p={0}
+        resize="none"
+        minH={70}
+        maxH={200}
+        focusBorderColor="none"
+        color="gray.700"
+      />
     </Box>
   );
 }

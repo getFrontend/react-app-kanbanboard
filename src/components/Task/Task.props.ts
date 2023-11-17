@@ -1,4 +1,4 @@
-import { TaskModel } from '../../config/utils/models';
+import { TaskModel } from '../../utils/models';
 
 export type TaskProps = {
   index: number;
