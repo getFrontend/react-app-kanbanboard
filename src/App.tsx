@@ -33,7 +33,7 @@ function App() {
           >
             <Column column={ColumnType.HOT_TASKS} />
             <Column column={ColumnType.TO_DO} />
-            <Column column={ColumnType.IN_PROGRESS} />
+            <Column column={ColumnType.IN_WORK} />
             <Column column={ColumnType.DONE} />
           </SimpleGrid>
         </Container>

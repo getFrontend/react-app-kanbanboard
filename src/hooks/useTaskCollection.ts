@@ -19,7 +19,7 @@ function useTaskCollection() {
     'To do': [
       {
         id: uuidv4(),
-        column: ColumnType.HOT_TASKS,
+        column: ColumnType.TO_DO,
         title: 'Task 2',
         color: 'blue.300'
       }
@@ -27,7 +27,7 @@ function useTaskCollection() {
     'In work': [
       {
         id: uuidv4(),
-        column: ColumnType.HOT_TASKS,
+        column: ColumnType.IN_WORK,
         title: 'Task 3',
         color: 'yellow.300'
       }
@@ -35,7 +35,7 @@ function useTaskCollection() {
     'Done': [
       {
         id: uuidv4(),
-        column: ColumnType.HOT_TASKS,
+        column: ColumnType.DONE,
         title: 'Task 4',
         color: 'green.300'
       }

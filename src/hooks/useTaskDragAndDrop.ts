@@ -28,7 +28,7 @@ export function useTaskDragAndDrop<T extends HTMLElement>(
         return;
       }
 
-      //if the tasks are not on the same column
+      // If the tasks are not on the same column
       if (item.from !== task.column) {
         return;
       }
@@ -36,7 +36,7 @@ export function useTaskDragAndDrop<T extends HTMLElement>(
       const draggedItemIndex = item.index;
       const hoveredItemIndex = index;
 
-      // swapping the task with itself
+      //Now we are swapping the task with itself
       if (draggedItemIndex === hoveredItemIndex) {
         return;
       }
