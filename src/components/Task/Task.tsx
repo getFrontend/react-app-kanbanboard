@@ -1,6 +1,7 @@
 import { DeleteIcon } from '@chakra-ui/icons';
 import { TaskProps } from './Task.props';
 import { Box, IconButton } from '@chakra-ui/react';
+import { AutoResizeTextArea } from '../AutoResizeTextArea/AutoResizeTextArea';
 
 function Task({
   index,
@@ -37,7 +38,7 @@ function Task({
         opacity={0}
         _groupHover={{ opacity: 1 }}
       />
-      <TextArea
+      <AutoResizeTextArea
         value={task.title}
         fontWeight="semibold"
         cursor="inherit"

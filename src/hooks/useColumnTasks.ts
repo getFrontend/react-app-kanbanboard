@@ -45,7 +45,7 @@ function useColumnTasks(column: ColumnType) {
     });
   }, [column, setTasks]);
 
-  const updatedTask = useCallback((
+  const updateTask = useCallback((
     id: TaskModel['id'], updatedTask: Omit<Partial<TaskModel>, 'id'>
   ) => {
     setTasks((allTasks) => {
@@ -53,7 +53,7 @@ function useColumnTasks(column: ColumnType) {
       return {
         ...allTasks,
         [column]: columnTasks.map((task) => {
-          task.id === id ? { ...task, ...updateTask } : task;
+          task.id === id ? { ...task, ...updatedTask } : task;
         })
       };
     });
@@ -93,7 +93,7 @@ function useColumnTasks(column: ColumnType) {
     tasks: columnTasks,
     addEmptyTask,
     deleteTask,
-    updatedTask,
+    updateTask,
     dropTaskFrom,
     swapTasks
   };
