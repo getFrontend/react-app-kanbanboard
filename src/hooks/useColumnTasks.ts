@@ -3,6 +3,7 @@ import { ColumnType } from '../utils/enums';
 import useTaskCollection from './useTaskCollection';
 import { v4 as uuidv4 } from 'uuid';
 import pickChakraRandomColor from '../helpers/pickChakraRandomColor';
+import { TaskModel } from '../utils/models';
 
 const MAX_TASK_PER_COLUMN = 12;
 
@@ -33,7 +34,10 @@ function useColumnTasks(column: ColumnType) {
     });
   }, [column, setTasks]);
 
-  return { tasks };
+  return {
+    tasks: tasks[column],
+    addEmptyTask
+  };
 }
 
 export default useColumnTasks;

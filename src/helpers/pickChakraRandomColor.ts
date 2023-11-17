@@ -1,4 +1,4 @@
-export function pickChakraRandomColor(variant = '') {
+function pickChakraRandomColor(variant = '') {
   const colors = [
     'red',
     'orange',
@@ -16,3 +16,5 @@ export function pickChakraRandomColor(variant = '') {
 
   return color + variant;
 }
+
+export default pickChakraRandomColor;
