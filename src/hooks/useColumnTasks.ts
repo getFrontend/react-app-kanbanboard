@@ -35,15 +35,16 @@ function useColumnTasks(column: ColumnType) {
     });
   }, [column, setTasks]);
 
-  const deleteTask = useCallback((id: TaskModel['id']) => {
-    setTasks((allTasks) => {
-      const columnTasks = allTasks[column];
-      return {
-        ...allTasks,
-        [column]: columnTasks.filter((task) => task.id !== id)
-      };
-    });
-  }, [column, setTasks]);
+  const deleteTask = useCallback(
+    (id: TaskModel['id']) => {
+      setTasks((allTasks) => {
+        const columnTasks = allTasks[column];
+        return {
+          ...allTasks,
+          [column]: columnTasks.filter((task) => task.id !== id)
+        };
+      });
+    }, [column, setTasks]);
 
   const updateTask = useCallback((
     id: TaskModel['id'], updatedTask: Omit<Partial<TaskModel>, 'id'>
