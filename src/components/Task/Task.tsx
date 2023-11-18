@@ -44,7 +44,7 @@ function Task({
         role="group"
         position="relative"
         rounded="lg"
-        w={{ base: 220, md: 'fullgi' }}
+        w={{ base: 220, md: "full" }}
         pl={3}
         pr={7}
         pt={3}
