@@ -55,7 +55,7 @@ function Column({ column }: { column: ColumnType }) {
         align="center"
         gap={2}
       >
-        
+
         <Heading
           w="full"
           letterSpacing="wide"
@@ -91,7 +91,7 @@ function Column({ column }: { column: ColumnType }) {
       <Stack
         ref={dropRef}
         direction={{ base: 'row', md: 'column' }}
-        h={{ base: 300, md: 600 }}
+        h={{ base: 200, md: 500 }}
         p={3}
         mt={2}
         spacing={4}
