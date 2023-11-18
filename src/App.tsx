@@ -11,24 +11,24 @@ function App() {
   return (
     <main>
       <Heading
-        fontSize={{ base: '4xl', sm: '5xl', md: '6xl' }}
+        fontSize={{ base: 'xl', sm: '4xl', md: '5xl' }}
         fontWeight="bold"
         textAlign="center"
         bgGradient="linear(to-r, #7928CA, #FF0080)"
         bgClip="text"
         mt={4}
       >
-        Just one more usefull Kanban Board
+        One more usefull Kanban Board
       </Heading >
       <DarkModeIconButton position="absolute" top={0} right={2} />
       <DndProvider backend={HTML5Backend}>
         <Container
           maxWidth="container.xl"
-          px={4}
-          py={10}
+          px={2}
+          py={12}
         >
           <SimpleGrid
-            columns={{ base: 1, md: 4 }}
+            columns={{ base: 1, md: 2, lg: 4 }}
             spacing={{ base: 16, md: 4 }}
           >
             <Column column={ColumnType.HOT_TASKS} />

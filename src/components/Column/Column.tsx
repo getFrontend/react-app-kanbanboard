@@ -2,8 +2,10 @@ import { ColumnType } from '../../utils/enums';
 import {
   Badge,
   Box,
+  Flex,
   Heading,
   IconButton,
+  Spacer,
   Stack,
   useColorModeValue
 } from '@chakra-ui/react';
@@ -42,36 +44,55 @@ function Column({ column }: { column: ColumnType }) {
     />
   ));
 
+  const iconColor100 = `${ColumnColorScheme[column]}.100`;
+  const iconColor200 = `${ColumnColorScheme[column]}.200`;
+  const iconColor400 = `${ColumnColorScheme[column]}.400`;
+
   return (
     <Box>
-      <Heading fontSize="md" mb={4} letterSpacing="wide">
-        <Badge
-          px={2}
-          py={1}
-          rounded="lg"
-          colorScheme={ColumnColorScheme[column]}
+      <Flex
+        justify="center"
+        align="center"
+        gap={2}
+      >
+        
+        <Heading
+          w="full"
+          letterSpacing="wide"
+          textAlign="center"
         >
-          {column}
-        </Badge>
-      </Heading>
-      <IconButton
-        size="xs"
-        w="full"
-        color={useColorModeValue('gray.500', 'gray.400')}
-        bgColor={useColorModeValue('gray.100', 'gray.700')}
-        _hover={{ bgColor: useColorModeValue('gray.200', 'gray.600') }}
-        py={2}
-        variant="solid"
-        onClick={addEmptyTask}
-        colorScheme="black"
-        aria-label="add-task"
-        icon={<AddIcon />}
-      />
+          <Badge
+            w="full"
+            px={6}
+            py={3.5}
+            rounded="xl"
+            colorScheme={ColumnColorScheme[column]}
+            fontSize="lg"
+          >
+            {column}
+          </Badge>
+        </Heading>
+        <IconButton
+          size="lg"
+          w="30%"
+          color={useColorModeValue('gray.800', 'gray.600')}
+          bgColor={useColorModeValue(iconColor200, iconColor400)}
+          // bgColor={useColorModeValue('gray.100', 'gray.700')}
+          _hover={{ bgColor: useColorModeValue(iconColor100, iconColor400) }}
+          rounded="xl"
+          variant="solid"
+          fontSize="lg"
+          onClick={addEmptyTask}
+          colorScheme={ColumnColorScheme[column]}
+          aria-label="add-task"
+          icon={<AddIcon />}
+        />
+      </Flex>
       <Stack
         ref={dropRef}
         direction={{ base: 'row', md: 'column' }}
         h={{ base: 300, md: 600 }}
-        p={4}
+        p={3}
         mt={2}
         spacing={4}
         bgColor={useColorModeValue('gray.50', 'gray.900')}

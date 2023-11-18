@@ -44,7 +44,7 @@ function Task({
         role="group"
         position="relative"
         rounded="lg"
-        w={200}
+        w={{ base: 220, md: 'fullgi' }}
         pl={3}
         pr={7}
         pt={3}
@@ -58,11 +58,11 @@ function Task({
       >
         <IconButton
           position="absolute"
-          top={0}
+          bottom={0}
           right={0}
           zIndex={100}
           aria-label="delete-task"
-          size="md"
+          size="lg"
           colorScheme="solid"
           color={'gray.700'}
           icon={<DeleteIcon />}
@@ -77,10 +77,10 @@ function Task({
           border="none"
           p={0}
           resize="none"
-          minH={70}
+          minH={50}
           maxH={200}
           focusBorderColor="none"
-          color="gray.700"
+          color="gray.800"
           onChange={handleTitleChange}
         />
       </Box>
