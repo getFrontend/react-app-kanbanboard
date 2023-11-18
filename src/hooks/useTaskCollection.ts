@@ -11,7 +11,7 @@ function useTaskCollection() {
       {
         id: uuidv4(),
         column: ColumnType.HOT_TASKS,
-        title: 'Task 1',
+        title: 'Pay attention to Frontend tasks on a daily basis',
         color: 'orange.300'
       }
     ],
@@ -19,7 +19,7 @@ function useTaskCollection() {
       {
         id: uuidv4(),
         column: ColumnType.TO_DO,
-        title: 'Task 2',
+        title: 'Start learning the Next.js framework',
         color: 'blue.300'
       }
     ],
@@ -27,15 +27,21 @@ function useTaskCollection() {
       {
         id: uuidv4(),
         column: ColumnType.IN_WORK,
-        title: 'Task 3',
+        title: 'Learn React',
         color: 'yellow.300'
+      },
+      {
+        id: uuidv4(),
+        column: ColumnType.IN_WORK,
+        title: 'Read one chapter of the book every day',
+        color: 'yellow.200'
       }
     ],
     'Done': [
       {
         id: uuidv4(),
         column: ColumnType.DONE,
-        title: 'Task 4',
+        title: 'Learned basic JavaScript.',
         color: 'green.300'
       }
     ]
