@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
-import { ColumnType } from '../utils/enums';
-import useTaskCollection from './useTaskCollection';
 import { v4 as uuidv4 } from 'uuid';
-import pickChakraRandomColor from '../helpers/pickChakraRandomColor';
+import { ColumnType } from '../utils/enums';
 import { TaskModel } from '../utils/models';
+import useTaskCollection from './useTaskCollection';
+import pickChakraRandomColor from '../helpers/pickChakraRandomColor';
 import { swap } from '../helpers/swap';
 
 const MAX_TASK_PER_COLUMN = 12;
@@ -25,12 +25,12 @@ function useColumnTasks(column: ColumnType) {
         id: uuidv4(),
         title: `New ${column} task`,
         color: pickChakraRandomColor('.300'),
-        column
+        column,
       };
 
       return {
         ...allTasks,
-        [column]: [newColumnTask, ...columnTasks]
+        [column]: [newColumnTask, ...columnTasks],
       };
     });
   }, [column, setTasks]);
@@ -41,24 +41,27 @@ function useColumnTasks(column: ColumnType) {
         const columnTasks = allTasks[column];
         return {
           ...allTasks,
-          [column]: columnTasks.filter((task) => task.id !== id)
+          [column]: columnTasks.filter((task) => task.id !== id),
         };
       });
-    }, [column, setTasks]);
+    },
+    [column, setTasks],
+  );
 
-  const updateTask = useCallback((
-    id: TaskModel['id'], updatedTask: Omit<Partial<TaskModel>, 'id'>
-  ) => {
-    setTasks((allTasks) => {
-      const columnTasks = allTasks[column];
-      return {
-        ...allTasks,
-        [column]: columnTasks.map((task) => {
-          task.id === id ? { ...task, ...updatedTask } : task;
-        })
-      };
-    });
-  }, [column, setTasks]);
+  const updateTask = useCallback(
+    (id: TaskModel['id'], updatedTask: Omit<Partial<TaskModel>, 'id'>) => {
+      setTasks((allTasks) => {
+        const columnTasks = allTasks[column];
+        return {
+          ...allTasks,
+          [column]: columnTasks.map((task) =>
+            task.id === id ? { ...task, ...updatedTask } : task,
+          ),
+        };
+      });
+    },
+    [column, setTasks],
+  );
 
   const dropTaskFrom = useCallback(
     (from: ColumnType, id: TaskModel['id']) => {
@@ -70,14 +73,15 @@ function useColumnTasks(column: ColumnType) {
         if (!movingTask) {
           return allTasks;
         }
-
         return {
           ...allTasks,
           [from]: fromColumnTasks.filter((task) => task.id !== id),
-          [column]: [{ ...movingTask, column }, ...toColumnTasks]
+          [column]: [{ ...movingTask, column }, ...toColumnTasks],
         };
       });
-    }, [column, setTasks]);
+    },
+    [column, setTasks],
+  );
 
   const swapTasks = useCallback(
     (i: number, j: number) => {
@@ -85,18 +89,20 @@ function useColumnTasks(column: ColumnType) {
         const columnTasks = allTasks[column];
         return {
           ...allTasks,
-          [column]: swap(columnTasks, i, j)
+          [column]: swap(columnTasks, i, j),
         };
       });
-    }, [column, setTasks]);
+    },
+    [column, setTasks],
+  );
 
   return {
     tasks: columnTasks,
     addEmptyTask,
-    deleteTask,
     updateTask,
     dropTaskFrom,
-    swapTasks
+    deleteTask,
+    swapTasks,
   };
 }
 

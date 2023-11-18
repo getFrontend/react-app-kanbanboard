@@ -23,7 +23,7 @@ function App() {
       <DarkModeIconButton position="absolute" top={0} right={2} />
       <DndProvider backend={HTML5Backend}>
         <Container
-          maxWidth="container.lg"
+          maxWidth="container.xl"
           px={4}
           py={10}
         >

@@ -1,10 +1,19 @@
-import { TaskProps } from './Task.props';
+// import { TaskProps } from './Task.props';
 import { Box, IconButton, ScaleFade } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 import { AutoResizeTextArea } from '../AutoResizeTextArea/AutoResizeTextArea';
 import { useTaskDragAndDrop } from '../../hooks/useTaskDragAndDrop';
 import { memo } from 'react';
 import _ from 'lodash';
+import { TaskModel } from '../../utils/models';
+
+type TaskProps = {
+  index: number;
+  task: TaskModel;
+  onUpdate: (id: TaskModel['id'], updatedTask: TaskModel) => void;
+  onDelete: (id: TaskModel['id']) => void;
+  onDropHover: (i: number, j: number) => void;
+};
 
 function Task({
   index,
@@ -58,9 +67,7 @@ function Task({
           color={'gray.700'}
           icon={<DeleteIcon />}
           opacity={0}
-          _groupHover={{
-            opacity: 1,
-          }}
+          _groupHover={{ opacity: 1 }}
           onClick={handleDeleteClick}
         />
         <AutoResizeTextArea
