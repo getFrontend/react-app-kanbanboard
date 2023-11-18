@@ -1,5 +1,5 @@
 // import { TaskProps } from './Task.props';
-import { Box, IconButton, ScaleFade } from '@chakra-ui/react';
+import { Box, IconButton, ScaleFade, useToast } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 import { AutoResizeTextArea } from '../AutoResizeTextArea/AutoResizeTextArea';
 import { useTaskDragAndDrop } from '../../hooks/useTaskDragAndDrop';
@@ -32,8 +32,30 @@ function Task({
     handleUpdate(task.id, { ...task, title: newTitle });
   };
 
+  const toast = useToast();
+  const createTost = () => {
+    return {
+      position: 'bottom-left',
+      render: toast({
+        position: 'bottom-left',
+        render: () => (
+          <Box
+            rounded='lg'
+            color='white'
+            p={2}
+            bg='green.500'
+            textAlign='center'
+          >
+            Task successfully deleted!
+          </Box>
+        )
+      })
+    }
+  }
+
   const handleDeleteClick = () => {
     handleDelete(task.id);
+    createTost();
   };
 
   return (
