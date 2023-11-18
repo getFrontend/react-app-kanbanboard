@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,600&family=Roboto+Condensed:wght@300&family=Roboto+Serif:opsz,wght@8..144,500&display=swap');
+
 #root {
   margin: 0;
   min-height: 100svh;
@@ -13,4 +15,8 @@
 body {
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  font-family: 'Roboto Serif', serif;
 }
