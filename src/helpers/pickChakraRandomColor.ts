@@ -6,7 +6,6 @@ function pickChakraRandomColor(variant = '') {
     'green',
     'teal',
     'blue',
-    'ocean',
     'cyan',
     'purple',
     'pink'
