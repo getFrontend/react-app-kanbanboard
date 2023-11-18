@@ -1,4 +1,4 @@
-import { Heading, Container, SimpleGrid, Flex } from '@chakra-ui/react';
+import { Heading, Container, SimpleGrid, Flex, Highlight } from '@chakra-ui/react';
 import Column from './components/Column/Column';
 import { ColumnType } from './utils/enums';
 import { DndProvider } from 'react-dnd';
@@ -11,7 +11,7 @@ function App() {
     <main>
       <Container
         maxWidth="container.xl"
-        py={2}
+        py={4}
       >
         <Flex
           align="center"
@@ -21,14 +21,21 @@ function App() {
             fontSize={{ base: 'xl', sm: '4xl', md: '5xl' }}
             fontWeight="bold"
             textAlign="center"
-            bgGradient="linear(to-r, #E0F4FF, #435585)"
+            bgGradient="linear(to-t, #5C8984, #A0C49D)"
             bgClip="text"
           >
-            One more usefull Kanban Board
+            <Highlight
+              query="usefull"
+              styles={{ px: '6', rounded: 'xl', bg: 'green.100', color: '#5C8984' }}
+            >
+              One more usefull KANBAN Board
+            </Highlight>
           </Heading >
           <DarkModeIconButton
+            bgColor='transparent'
+            _hover={{ bgColor: '#FFD9B7' }}
             fontSize={{ base: 'lg', md: '2xl' }}
-            rounded="3xl"
+            rounded="full"
           />
         </Flex>
 
