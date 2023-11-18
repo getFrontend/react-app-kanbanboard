@@ -5,6 +5,7 @@ import { TaskModel } from '../utils/models';
 import useTaskCollection from './useTaskCollection';
 import pickChakraRandomColor from '../helpers/pickChakraRandomColor';
 import { swap } from '../helpers/swap';
+import { ColumnColorScheme } from '../components/Column/Column';
 
 const MAX_TASK_PER_COLUMN = 12;
 
@@ -23,8 +24,8 @@ function useColumnTasks(column: ColumnType) {
 
       const newColumnTask: TaskModel = {
         id: uuidv4(),
-        title: `New ${column} task`,
-        color: pickChakraRandomColor('.300'),
+        title: `🕒${column}: new task`,
+        color: pickChakraRandomColor('.200') || ColumnColorScheme[column],
         column,
       };
 

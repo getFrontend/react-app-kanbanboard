@@ -99,10 +99,11 @@ function Task({
           border="none"
           p={0}
           resize="none"
-          minH={50}
+          minH={55}
           maxH={200}
           focusBorderColor="none"
-          color="gray.800"
+          color="gray.900"
+          lineHeight={1.5}
           onChange={handleTitleChange}
         />
       </Box>

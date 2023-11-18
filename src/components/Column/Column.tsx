@@ -14,7 +14,7 @@ import Task from '../Task/Task';
 import useColumnTasks from '../../hooks/useColumnTasks';
 import useColumnDrop from '../../hooks/useColumnDrop';
 
-const ColumnColorScheme: Record<ColumnType, string> = {
+export const ColumnColorScheme: Record<ColumnType, string> = {
   'Hot tasks': 'orange',
   'To do': 'blue',
   'In work': 'yellow',
