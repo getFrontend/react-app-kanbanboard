@@ -4,8 +4,7 @@ const theme = extendTheme({
   styles: {
     global: (props: { colorMode: string }) => ({
       body: {
-        bg: props.colorMode === 'dark' ? 'dark.800' : 'white'
-
+        bg: props.colorMode === 'dark' ? 'dark.800' : '#FAF3F0'
       }
     })
   }
