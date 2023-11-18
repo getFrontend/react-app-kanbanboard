@@ -1,4 +1,4 @@
-import { Heading, Container, SimpleGrid, Flex, Highlight } from '@chakra-ui/react';
+import { Heading, Container, SimpleGrid, Flex, Highlight, useColorModeValue } from '@chakra-ui/react';
 import Column from './components/Column/Column';
 import { ColumnType } from './utils/enums';
 import { DndProvider } from 'react-dnd';
@@ -13,38 +13,35 @@ function App() {
         maxWidth="container.xl"
         py={4}
       >
-        <Flex
-          align="center"
-        >
+        <Flex>
           <Heading
             w="full"
-            fontSize={{ base: 'xl', sm: '4xl', md: '5xl' }}
+            fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '5xl' }}
             fontWeight="bold"
-            textAlign="center"
+            textAlign={{ base: 'left', md: 'center' }}
             bgGradient="linear(to-t, #5C8984, #A0C49D)"
             bgClip="text"
           >
             <Highlight
               query="usefull"
-              styles={{ px: '6', rounded: 'xl', bg: 'green.100', color: '#5C8984' }}
+              styles={{ px: {base: '2', sm: '6'}, rounded: 'xl', bg: 'green.100', color: '#5C8984' }}
             >
               One more usefull KANBAN Board
             </Highlight>
           </Heading >
           <DarkModeIconButton
             bgColor='transparent'
-            _hover={{ bgColor: '#FFD9B7' }}
+            _hover={{ bgColor: useColorModeValue('#FFD9B7', 'gray.700') }}
             fontSize={{ base: 'lg', md: '2xl' }}
             rounded="full"
           />
         </Flex>
-
       </Container>
       <DndProvider backend={HTML5Backend}>
         <Container
           maxWidth="container.xl"
           px={2}
-          py={8}
+          py={{ base: '2', sm: '4', md: '8' }}
         >
           <SimpleGrid
             columns={{ base: 1, md: 2, lg: 4 }}

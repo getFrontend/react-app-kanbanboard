@@ -77,8 +77,7 @@ function Column({ column }: { column: ColumnType }) {
           w="30%"
           color={useColorModeValue('gray.800', 'gray.600')}
           bgColor={useColorModeValue(iconColor200, iconColor400)}
-          // bgColor={useColorModeValue('gray.100', 'gray.700')}
-          _hover={{ bgColor: useColorModeValue(iconColor100, iconColor400) }}
+          _hover={{ bgColor: useColorModeValue(iconColor100, iconColor200) }}
           rounded="xl"
           variant="solid"
           fontSize="lg"
