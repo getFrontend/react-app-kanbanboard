@@ -9,7 +9,7 @@ const theme = extendTheme({
   styles: {
     global: (props: { colorMode: string }) => ({
       body: {
-        bg: props.colorMode === 'dark' ? 'dark.800' : '#EEE3CB'
+        bg: props.colorMode === 'dark' ? 'dark.700' : '#EEE3CB'
       }
     })
   }

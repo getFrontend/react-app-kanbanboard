@@ -19,12 +19,13 @@ function App() {
             fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '5xl' }}
             fontWeight="bold"
             textAlign={{ base: 'left', md: 'center' }}
-            bgGradient="linear(to-t, #5C8984, #A0C49D)"
-            bgClip="text"
+            color="#5C8984"
+            // bgGradient="linear(to-t, #5C8984, #A0C49D)"
+            // bgClip="text"
           >
             <Highlight
               query="usefull"
-              styles={{ px: {base: '2', sm: '6'}, rounded: 'xl', bg: 'green.100', color: '#5C8984' }}
+              styles={{ px: {base: '2', sm: '6'}, rounded: 'xl', bg: 'green.100', color: '#5C8984'}}
             >
               One more usefull KANBAN Board
             </Highlight>
