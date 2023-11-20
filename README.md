@@ -1,4 +1,10 @@
-# React + TypeScript + Vite
+# About
+
+A useful **Kanban Board** to increase your productivity!
+
+This is my personal pet project made as part of a **React** JS study. *Chakra UI* is used as an interface.
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
