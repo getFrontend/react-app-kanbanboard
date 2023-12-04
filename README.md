@@ -4,6 +4,16 @@ A useful **Kanban Board** to increase your productivity!
 
 This is my personal pet project made as part of a **React** JS study. *Chakra UI* is used as an interface.
 
+## [Live Demo](https://u-kanbanboard.vercel.app/)
+
+Light theme
+
+<img src="https://github.com/getFrontend/react-app-kanbanboard/blob/main/public/img/u-kanbanboard_preview_s.png?raw=true" />
+
+Dark theme
+
+<img src="https://github.com/getFrontend/react-app-kanbanboard/blob/main/public/img/u-kanbanboard_preview_darkmode_s.png?raw=true" />
+
 ## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
